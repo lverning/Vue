@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>天气案例</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<h2>今天天气很{{info}}</h2>
+			<button @click="toggle">切换天气</button>
+		</div>
+	</body>
+	
+	
+	<script>
+		new Vue({
+			el:'#app',
+			data:{
+				isHot:true
+			},
+			computed:{
+				info(){
+					return this.isHot ? '炎热' : '凉爽'
+				}
+			},
+			methods:{
+				toggle(){
+					this.isHot = !this.isHot
+				}
+			}
+		})
+	</script>
+</html>
